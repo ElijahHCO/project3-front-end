@@ -7,6 +7,7 @@ const SingleEquipComponent = (props) => {
         setShowing(!showing)
     }
     const [updateEquip, setUpdateEquip] = useState({
+        type: props.equip.type,
         productBrand: props.equip.productBrand,
         productModel: props.equip.productModel,
         quantity: props.equip.quantity,
