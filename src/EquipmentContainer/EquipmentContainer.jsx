@@ -69,7 +69,9 @@ const EquipmentContainer = () => {
     
         }
     }
-    useEffect(getEquips, [])
+    useEffect(()=>{
+        getEquips()
+    }, [])
     return (
         <div>
             <h2>Gear here!</h2>
