@@ -28,6 +28,7 @@ const SingleEquipComponent = (props) => {
 
     return (
         <div className="index-single-item">
+            <h1>{props.equip.type}</h1>
             <h2>{props.equip.productBrand}</h2>
             <h3>{props.equip.productModel}</h3>
             {props.equip.quantity > 0
@@ -47,6 +48,7 @@ const SingleEquipComponent = (props) => {
                         <button onClick={toggleShowing}>X</button>
                         <form onSubmit={submitUpdateEquip}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
+                            Type: <input onChange={handleInputChange} type="text" name="type" value={updateEquip.type} />
                             Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={updateEquip.productBrand} />
                             Model: <input onChange={handleInputChange} type="text" name="productModel" value={updateEquip.productModel} />
                             Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={updateEquip.quantity} />
