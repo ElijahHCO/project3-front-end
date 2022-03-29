@@ -9,7 +9,7 @@ const EquipmentContainer = () => {
     const createNewEquip = async (newEquip) => {
         console.log(newEquip);
         console.log('Lets create this!');
-        const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", {
+        const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", { mode: 'no-cors'},{
             method: "POST",
             body: JSON.stringify(newEquip),
             headers: {
@@ -26,7 +26,7 @@ const EquipmentContainer = () => {
     }
     const deleteEquip = async (idToDelete) => {
         try {
-            const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToDelete}`, {
+            const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToDelete}`, { mode: 'no-cors'},{
                 method: "DELETE"
             })
             const parsedResponse = await apiResponse.json()
@@ -44,7 +44,7 @@ const EquipmentContainer = () => {
     }
     const getEquips = async () => {
         try {
-            const equips = await fetch('https://snowshelves2.herokuapp.com/equips')
+            const equips = await fetch('https://snowshelves2.herokuapp.com/equips', { mode: 'no-cors'})
             const parsedEquips = await equips.json();
             setEquips(parsedEquips.data)
         } catch (err) {
@@ -52,7 +52,7 @@ const EquipmentContainer = () => {
         }
     }
     const updateEquip = async (idToUpdate ,equipToUpdate) => {
-        const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/${idToUpdate}`, {
+        const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/${idToUpdate}`, { mode: 'no-cors'}, {
             method: "PUT",
             body: JSON.stringify(equipToUpdate),
             headers: {
