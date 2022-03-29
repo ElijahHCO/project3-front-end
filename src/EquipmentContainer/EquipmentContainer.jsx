@@ -54,19 +54,23 @@ const EquipmentContainer = () => {
         }
     }
     const updateEquip = async (idToUpdate ,equipToUpdate) => {
-        const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToUpdate}`, {
-            method: "PUT",
-            body: JSON.stringify(equipToUpdate),
-            headers: {
-                "Content-type": "application/json"
+        try{
+            const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToUpdate}`, {
+                method: "PUT",
+                body: JSON.stringify(equipToUpdate),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            const parsedResponse = await apiResponse.json();
+            if(parsedResponse.success){
+                const newEquips = equips.map(equip => equip._id === idToUpdate ? equipToUpdate : equip)
+                setEquips(newEquips)
+            }else{
+        
             }
-        })
-        const parsedResponse = await apiResponse.json();
-        if(parsedResponse.success){
-            const newEquips = equips.map(equip => equip._id === idToUpdate ? equipToUpdate : equip)
-            setEquips(newEquips)
-        }else{
-    
+        }catch(err){
+            console.log(err)
         }
     }
     useEffect(()=>{

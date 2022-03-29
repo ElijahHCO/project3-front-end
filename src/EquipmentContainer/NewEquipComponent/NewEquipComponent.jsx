@@ -7,7 +7,7 @@ const NewEquipComponent = (props) => {
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
     const [newEquip, setNewEquip] = useState({
-        equiptype:"",
+        type:"",
         productBrand: "",
         productModel: "",
         quantity: 0,
@@ -32,6 +32,7 @@ const NewEquipComponent = (props) => {
         if(validSubmission){
             props.createNewEquip(newEquip)
             setNewEquip({
+                type: "",
                 productBrand: "",
                 productModel: "",
                 quantity: 0
