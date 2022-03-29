@@ -7,21 +7,22 @@ const EquipmentContainer = () => {
     const [equips, setEquips] = useState([])
     const [newEquipServerError, setNewEquipServerError] = useState("")
     const createNewEquip = async (newEquip) => {
-        console.log(newEquip);
-        console.log('Lets create this!');
-        const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", { mode: 'no-cors'},{
-            method: "POST",
-            body: JSON.stringify(newEquip),
-            headers: {
-                "Content-Type": "application/json"
+        try{
+            const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", { mode: 'no-cors'},{
+                method: "POST",
+                body: JSON.stringify(newEquip),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            const parsedResponse = await apiResponse.json();
+            if (parsedResponse.success) {
+                setEquips([parsedResponse.data, ...equips])
+            } else {
+                setNewEquipServerError(parsedResponse.data)
             }
-        })
-        const parsedResponse = await apiResponse.json()
-        console.log(parsedResponse)
-        if (parsedResponse.success) {
-            setEquips([parsedResponse.data, ...equips])
-        } else {
-            setNewEquipServerError(parsedResponse.data)
+        }catch(err){
+            console.log(err.message)
         }
     }
     const deleteEquip = async (idToDelete) => {
