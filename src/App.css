@@ -1,1 +1,91 @@
+* {
+    background-color: rgba(206, 214, 198, 0.904);
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.App {
+    background-color: rgba(206, 214, 198, 0.904);
+    padding: 1em;
+}
+
+.display-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    text-align: center;
+    background-color: black;
+    color: rgb(255, 253, 250);
+    padding: .5em;
+    border: 1px solid;
+    border-radius: 1em;
+    margin: .5em;
+}
+
+.header-two {
+    text-align: center;
+    margin: 1em;
+}
+
+.add-equip-btn {
+    width: 160px;
+    background-color: black;
+    color: rgb(255, 253, 250);
+    text-align: center;
+    padding: .8em;
+    border-radius: 1em;
+    margin-right: 3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-edit-btn {
+    background-color: black;
+    color: rgb(255, 253, 250);
+    border: none;
+    border-radius: .5em;
+    margin: .5em;
+}
+
+.x-btn {
+    background-color: black;
+    color: rgb(255, 253, 250);
+    border: none;
+    border-radius: 1em;
+    margin: .5em
+}
+
+#edit-item-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#new-item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-div {
+    position: relative;
+    top: 1.2em;
+    left: 6.25em;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:left;
+    padding: 1em;
+    background-color: black;
+    color: rgb(255, 253, 250);
+    border: none;
+    border-radius: .5em;
+}
+input{
+    margin: .5em;
+    border-radius: .5em;
+}

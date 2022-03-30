@@ -5,7 +5,7 @@ import EquipmentContainer from './EquipmentContainer/EquipmentContainer';
 function App() {
   return (
     <div className="App">
-      <h1>SnowShelves</h1>
+      <h1 className="Header">SnowShelves</h1>
      <EquipmentContainer></EquipmentContainer>
     </div>
   );

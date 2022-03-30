@@ -78,13 +78,15 @@ const EquipmentContainer = () => {
     }, [])
     return (
         <div>
-            <h2>Gear here!</h2>
+            <h2 className="header-two">Equipment</h2>
+            <div className="display-div">
             <NewEquipComponent
                 newEquipServerError={newEquipServerError}
                 createNewEquip={createNewEquip}></NewEquipComponent>
             {equips.reverse().map((equip) => {
                 return <SingleEquipComponent key={equip._id} equip={equip} deleteEquip={deleteEquip} updateEquip={updateEquip}></SingleEquipComponent>
             })}
+            </div>
         </div>
     )
 }

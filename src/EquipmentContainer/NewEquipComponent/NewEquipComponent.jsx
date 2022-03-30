@@ -7,7 +7,7 @@ const NewEquipComponent = (props) => {
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
     const [newEquip, setNewEquip] = useState({
-        type:"",
+        type: "",
         productBrand: "",
         productModel: "",
         quantity: 0,
@@ -29,7 +29,7 @@ const NewEquipComponent = (props) => {
             })
             validSubmission = false;
         }
-        if(validSubmission){
+        if (validSubmission) {
             props.createNewEquip(newEquip)
             setNewEquip({
                 type: "",
@@ -44,27 +44,28 @@ const NewEquipComponent = (props) => {
             setShowing(false)
         }
     }
-    
+
     return (
         <>
             {
                 showing
                     ?
                     <div id="new-item-form">
-                        <button onClick={toggleShowing}>X</button>
-                        <form onSubmit={submitNewEquip}>
+                        <div className="btn-div">
+                            <button className="x-btn" onClick={toggleShowing}>X</button>
+                        </div>
+                        <form className="form" onSubmit={submitNewEquip}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
                             {props.NewItemServerError ? <p className="form-error">{props.newItemServerError}</p> : null}
                             Type: <input onChange={handleInputChange} type="text" name="type" value={newEquip.type} />
                             Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={newEquip.productBrand} />
                             Model: <input onChange={handleInputChange} type="text" name="productModel" value={newEquip.productModel} />
                             Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={newEquip.quantity} />
-                            <br /><br />
-                            <button type="submit">Submit</button>
+                            <button className="delete-edit-btn" type="submit">Submit</button>
                         </form>
                     </div>
                     :
-                    <button onClick={toggleShowing}>Add Equipment</button>
+                    <button onClick={toggleShowing} className="add-equip-btn">Add Equipment</button>
             }
         </>
     )
