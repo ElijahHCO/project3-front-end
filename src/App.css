@@ -9,6 +9,34 @@
     padding: 1em;
 }
 
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: black;
+    color: rgb(255, 253, 250);
+    border: none;
+    border-radius: 1em;
+}
+.nav-links {
+    background-color: black;
+    width: 10em;
+    display:flex;
+    align-items: center;
+    color: rgb(255, 253, 250);
+}
+
+nav h3 {
+    background-color: black;
+    color: rgb(255, 253, 250);
+}
+
+nav li {
+    background-color: black;
+    list-style: none;
+}
+
 .display-div {
     display: flex;
     flex-direction: column;
@@ -19,7 +47,7 @@
     background-color: black;
     color: rgb(255, 253, 250);
     padding: .5em;
-    border: 1px solid;
+    border:none;
     border-radius: 1em;
     margin: .5em;
 }
