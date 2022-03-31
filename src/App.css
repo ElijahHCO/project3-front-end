@@ -124,3 +124,13 @@ input{
 .ski-header {
     text-align: center;
 }
+
+.footer {
+    text-align: center;
+    background-color: black;
+    color: rgb(255, 253, 250);
+    padding: .5em;
+    border:none;
+    border-radius: 1em;
+    margin: .5em;   
+}

@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<EquipmentContainer/>} />
       </Routes>
     </div>
+    <footer className="footer">SnowShleves</footer>
     </Router>
   );
 }
