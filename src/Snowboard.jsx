@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import EquipmentContainer from './EquipmentContainer/EquipmentContainer';
-import Nav from './Nav';
 
 function Snowboard() {
-  return (
-    <div className="App">
-      <h2>Snowboard</h2>
-     <EquipmentContainer></EquipmentContainer>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        <h2 className="snowboard-header">Snowboards</h2>        
 
-export default Snowboard;
+      </div>
+    );
+  }
+export default Snowboard

@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import EquipmentContainer from './EquipmentContainer/EquipmentContainer';
-import Nav from './Nav';
+import SkiContainer from './SkiContainer/SkiContainer';
 
 function Ski() {
   return (
     <div className="App">
-      <h2>Ski</h2>
-     <EquipmentContainer></EquipmentContainer>
+      <h2 className="ski-header">Skis</h2>
+      <SkiContainer></SkiContainer>
     </div>
   );
 }

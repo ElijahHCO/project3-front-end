@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Ski from './Ski';
 import Snowboard from './Snowboard';
+import EquipmentContainer from './EquipmentContainer/EquipmentContainer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/ski" element={<Ski/>} />
         <Route path="/snowboard" element={<Snowboard/>} />
+        <Route path="/" element={<EquipmentContainer/>} />
       </Routes>
     </div>
     </Router>
