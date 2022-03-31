@@ -1,13 +1,12 @@
 import React, { useState } from "react"
 
 const SingleSnowboardComponent = (props) => {
-    const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
     const [showing, setShowing] = useState(false)
     const toggleShowing = () => {
         setShowing(!showing)
     }
-    const [updateSnows, setUpdateSnow] = useState({
-        type: "Snowboards",
+    const [updateSnow, setUpdateSnow] = useState({
+        type: "Snowboard",
         productBrand: props.snows.productBrand,
         productModel: props.snows.productModel,
         quantity: props.snows.quantity,
@@ -17,13 +16,13 @@ const SingleSnowboardComponent = (props) => {
   
     const handleInputChange = (e) => {
         setUpdateSnow({
-            ...updateSnows,
+            ...updateSnow,
             [e.target.name]: e.target.value
         })
     }
     const submitUpdateSnow = (e) => {
         e.preventDefault();
-        props.updateSnows(props.snows._id, updateSnows)
+        props.updateSnow(props.snows._id, updateSnow)
         setShowing(false)
     }
 
@@ -48,7 +47,7 @@ const SingleSnowboardComponent = (props) => {
             <p>Currently Rented: 0</p>
             }
             <button className="delete-edit-btn" onClick={() => {
-                props.deleteSkis(props.snows._id)
+                props.deleteSnows(props.snows._id)
             }}>Delete</button>
             {
                 showing ?
@@ -57,11 +56,10 @@ const SingleSnowboardComponent = (props) => {
                         <button className="x-btn" onClick={toggleShowing}>X</button>
                         </div>
                         <form className="form" onSubmit={submitUpdateSnow}>
-                            {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
-                            Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={updateSnows.productBrand} />
-                            Model: <input onChange={handleInputChange} type="text" name="productModel" value={updateSnows.productModel} />
-                            Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={updateSnows.quantity} />
-                            Rented: <input onChange={handleInputChange} type="number" name="rented" value={updateSnows.rented}/>
+                            Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={updateSnow.productBrand} />
+                            Model: <input onChange={handleInputChange} type="text" name="productModel" value={updateSnow.productModel} />
+                            Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={updateSnow.quantity} />
+                            Rented: <input onChange={handleInputChange} type="number" name="rented" value={updateSnow.rented}/>
                             <button className="delete-edit-btn" type="submit">Submit</button>
                         </form>
                     </div>

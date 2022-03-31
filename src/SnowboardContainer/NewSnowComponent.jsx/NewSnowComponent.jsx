@@ -7,7 +7,7 @@ const NewSnowboardComponent = (props) => {
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
     const [newSnow, setNewSnow] = useState({
-        type: "Snowboards",
+        type: "Snowboard",
         productBrand: "",
         productModel: "",
         quantity: 0,
@@ -24,7 +24,7 @@ const NewSnowboardComponent = (props) => {
         props.createNewSnow(newSnow)
         console.log("working", props.createNewSnow)
         setNewSnow({
-            type: "Snowboards",
+            type: "Snowboard",
             productBrand: "",
             productModel: "",
             quantity: 0

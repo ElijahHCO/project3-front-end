@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 function Nav() {
     return(
         <nav>
+            <Link to="/">
             <h3>SS</h3>
+            </Link>
             <ul className="nav-links">
             <Link to="/ski">
-            <li>Ski</li>
+            <li>Skis</li>
             </Link>
             <Link to="/snowboard">
-            <li>Snowboard</li>
+            <li>Snowboards</li>
             </Link>
             </ul>
         </nav>
