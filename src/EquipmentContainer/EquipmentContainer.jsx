@@ -77,7 +77,7 @@ const EquipmentContainer = () => {
         getEquips()
     }, [])
     return (
-        <div>
+        <div className="container-div">
             <h2 className="header-two">Equipment</h2>
             <div className="display-div">
             <NewEquipComponent

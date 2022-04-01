@@ -7,7 +7,7 @@ const NewSkiComponent = (props) => {
     }
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" })
     const [newSki, setNewSki] = useState({
-        type: "Skis",
+        type: "Ski",
         productBrand: "",
         productModel: "",
         quantity: 0,
@@ -24,7 +24,7 @@ const NewSkiComponent = (props) => {
         props.createNewSki(newSki)
         console.log("working", props.createNewSki)
         setNewSki({
-            type: "Skis",
+            type: "Ski",
             productBrand: "",
             productModel: "",
             quantity: 0

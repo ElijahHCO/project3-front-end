@@ -6,7 +6,7 @@ function Nav() {
     return(
         <nav>
             <Link to="/">
-            <h3>SS</h3>
+            <h3 className="logo">SS</h3>
             </Link>
             <ul className="nav-links">
             <Link to="/ski">

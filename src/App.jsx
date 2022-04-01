@@ -11,13 +11,15 @@ function App() {
     <div className="App">
       <h1 className="Header">SnowShelves</h1>
     <Nav />
-      <Routes>
+    <div className="container">
+    <Routes>
         <Route path="/ski" element={<Ski/>} />
         <Route path="/snowboard" element={<Snowboard/>} />
         <Route path="/" element={<EquipmentContainer/>} />
       </Routes>
     </div>
-    <footer className="footer">SnowShleves</footer>
+      <footer className="footer">SnowShelves</footer>
+    </div>
     </Router>
   );
 }
