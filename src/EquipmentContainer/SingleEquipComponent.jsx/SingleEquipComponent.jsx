@@ -12,9 +12,9 @@ const SingleEquipComponent = (props) => {
         productModel: props.equip.productModel,
         quantity: props.equip.quantity,
         rented: props.equip.rented,
-        _id: props.equip._id 
+        _id: props.equip._id
     })
-  
+
     const handleInputChange = (e) => {
         setUpdateEquip({
             ...updateEquip,
@@ -37,16 +37,16 @@ const SingleEquipComponent = (props) => {
                 <div className="index-single-item-details">
                     <p>Available For Rental: {props.equip.quantity}</p>
                 </div>
-                : 
+                :
                 <p>Out of Stock!</p>
             }
             {props.equip.rented > 0
-            ?
-            <div className="index-single-items-details">
-                <p>Currently Rented: {props.equip.rented}</p>
-            </div>
-            :
-            <p>Currently Rented: 0</p>
+                ?
+                <div className="index-single-items-details">
+                    <p>Currently Rented: {props.equip.rented}</p>
+                </div>
+                :
+                <p>Currently Rented: 0</p>
             }
             <button className="delete-edit-btn" onClick={() => {
                 props.deleteEquip(props.equip._id)
@@ -55,7 +55,7 @@ const SingleEquipComponent = (props) => {
                 showing ?
                     <div id="edit-item-form">
                         <div className="btn-div">
-                        <button className="x-btn" onClick={toggleShowing}>X</button>
+                            <button className="x-btn" onClick={toggleShowing}>X</button>
                         </div>
                         <form className="form" onSubmit={submitUpdateEquip}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
@@ -63,7 +63,7 @@ const SingleEquipComponent = (props) => {
                             Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={updateEquip.productBrand} />
                             Model: <input onChange={handleInputChange} type="text" name="productModel" value={updateEquip.productModel} />
                             Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={updateEquip.quantity} />
-                            Rented: <input onChange={handleInputChange} type="number" name="rented" value={updateEquip.rented}/>
+                            Rented: <input onChange={handleInputChange} type="number" name="rented" value={updateEquip.rented} />
                             <button className="delete-edit-btn" type="submit">Submit</button>
                         </form>
                     </div>

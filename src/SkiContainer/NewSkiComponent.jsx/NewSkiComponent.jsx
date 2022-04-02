@@ -45,7 +45,7 @@ const NewSkiComponent = (props) => {
                         <div className="btn-div">
                             <button className="x-btn" onClick={toggleShowing}>X</button>
                         </div>
-                        <form className="form" onSubmit={(e)=>submitNewSki(e)}>
+                        <form className="form" onSubmit={(e) => submitNewSki(e)}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
                             {props.NewItemServerError ? <p className="form-error">{props.newItemServerError}</p> : null}
                             Brand: <input onChange={handleInputChange} required min="2" type="text" name="productBrand" value={newSki.productBrand} />

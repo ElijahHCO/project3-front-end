@@ -7,7 +7,7 @@ const EquipmentContainer = () => {
     const [equips, setEquips] = useState([])
     const [newEquipServerError, setNewEquipServerError] = useState("")
     const createNewEquip = async (newEquip) => {
-        try{
+        try {
             const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", {
                 method: "POST",
                 body: JSON.stringify(newEquip),
@@ -22,7 +22,7 @@ const EquipmentContainer = () => {
             } else {
                 setNewEquipServerError(parsedResponse.data)
             }
-        }catch(err){
+        } catch (err) {
             console.log(err)
         }
     }
@@ -36,11 +36,11 @@ const EquipmentContainer = () => {
                 const newEquips = equips.filter(equip => equip._id !== idToDelete)
                 setEquips(newEquips)
             } else {
-               
+
             }
             console.log(parsedResponse)
         } catch (err) {
-           console.log(err)
+            console.log(err)
         }
         console.log("deleting item ID" + idToDelete)
     }
@@ -53,8 +53,8 @@ const EquipmentContainer = () => {
             console.log(err)
         }
     }
-    const updateEquip = async (idToUpdate ,equipToUpdate) => {
-        try{
+    const updateEquip = async (idToUpdate, equipToUpdate) => {
+        try {
             const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToUpdate}`, {
                 method: "PUT",
                 body: JSON.stringify(equipToUpdate),
@@ -63,29 +63,29 @@ const EquipmentContainer = () => {
                 }
             })
             const parsedResponse = await apiResponse.json();
-            if(parsedResponse.success){
+            if (parsedResponse.success) {
                 const newEquips = equips.map(equip => equip._id === idToUpdate ? equipToUpdate : equip)
                 setEquips(newEquips)
-            }else{
-        
+            } else {
+
             }
-        }catch(err){
+        } catch (err) {
             console.log(err)
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         getEquips()
     }, [])
     return (
         <div className="container-div">
             <h2 className="header-two">Equipment</h2>
             <div className="display-div">
-            <NewEquipComponent
-                newEquipServerError={newEquipServerError}
-                createNewEquip={createNewEquip}></NewEquipComponent>
-            {equips.reverse().map((equip) => {
-                return <SingleEquipComponent key={equip._id} equip={equip} deleteEquip={deleteEquip} updateEquip={updateEquip}></SingleEquipComponent>
-            })}
+                <NewEquipComponent
+                    newEquipServerError={newEquipServerError}
+                    createNewEquip={createNewEquip}></NewEquipComponent>
+                {equips.reverse().map((equip) => {
+                    return <SingleEquipComponent key={equip._id} equip={equip} deleteEquip={deleteEquip} updateEquip={updateEquip}></SingleEquipComponent>
+                })}
             </div>
         </div>
     )
