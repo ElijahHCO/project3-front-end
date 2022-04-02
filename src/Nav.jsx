@@ -3,18 +3,18 @@ import './App.css';
 import { Link } from "react-router-dom";
 
 function Nav() {
-    return(
+    return (
         <nav>
             <Link to="/">
-            <h3 className="logo">SS</h3>
+                <h3 className="logo">Home</h3>
             </Link>
             <ul className="nav-links">
-            <Link to="/ski">
-            <li>Skis</li>
-            </Link>
-            <Link to="/snowboard">
-            <li>Snowboards</li>
-            </Link>
+                <Link to="/ski">
+                    <img src="skis-min.jpeg" alt="" id="ski-img" />
+                </Link>
+                <Link to="/snowboard">
+                    <img src="snowboards-min.jpeg" alt="" id="snow-img" />
+                </Link>
             </ul>
         </nav>
     )

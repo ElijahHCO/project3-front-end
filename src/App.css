@@ -139,3 +139,17 @@ input{
     margin: .5em;
     bottom: 0; 
 }
+
+#ski-img {
+    max-height: 4em;
+    max-height: auto;
+}
+
+#snow-img {
+    max-height: 4em;
+    max-height: auto;
+}
+
+a{
+    background-color: black;
+}
