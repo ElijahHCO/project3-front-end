@@ -65,7 +65,8 @@ const NewEquipComponent = (props) => {
                         </form>
                     </div>
                     :
-                    <button onClick={toggleShowing} className="add-equip-btn">Add Equipment</button>
+                    // <button onClick={toggleShowing} className="add-equip-btn">Add Equipment</button>
+                    <h3>All Equipment</h3>
             }
         </>
     )
