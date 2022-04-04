@@ -59,7 +59,7 @@ const SingleEquipComponent = (props) => {
                         </div>
                         <form className="form" onSubmit={submitUpdateEquip}>
                             {isValidState.valid ? null : <p className="form-error">{isValidState.message}</p>}
-                            Type: <input onChange={handleInputChange} type="text" name="type" value={updateEquip.type} />
+                            {/* Type: <input onChange={handleInputChange} type="text" name="type" value={updateEquip.type} /> */}
                             Brand: <input onChange={handleInputChange} type="text" name="productBrand" value={updateEquip.productBrand} />
                             Model: <input onChange={handleInputChange} type="text" name="productModel" value={updateEquip.productModel} />
                             Quantity: <input onChange={handleInputChange} type="number" name="quantity" value={updateEquip.quantity} />
