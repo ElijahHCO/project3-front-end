@@ -7,7 +7,7 @@ const SnowboardContainer = () => {
     const [newSnowServerError, setNewSnowServerError] = useState("")
     const createNewSnow = async (newSnow) => {
         try{
-            const apiResponse = await fetch("https://snowshelves2.herokuapp.com/equips", {
+            const apiResponse = await fetch("https://snowshelves-back.herokuapp.com/equips", {
                 method: "POST",
                 body: JSON.stringify(newSnow),
                 headers: {
@@ -30,7 +30,7 @@ const SnowboardContainer = () => {
     }
     const deleteSnows = async (idToDelete) => {
         try {
-            const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToDelete}`, {
+            const apiResponse = await fetch(`https://snowshelves-back.herokuapp.com/equips/${idToDelete}`, {
                 method: "DELETE"
             })
             const parsedResponse = await apiResponse.json()
@@ -48,7 +48,7 @@ const SnowboardContainer = () => {
     }
     const getSnows = async () => {
         try {
-            const snows = await fetch('https://snowshelves2.herokuapp.com/equips/snowboard', {
+            const snows = await fetch('https://snowshelves-back.herokuapp.com/equips/snowboard', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -63,7 +63,7 @@ const SnowboardContainer = () => {
     }
     const updateSnow = async (idToUpdate ,snowsToUpdate) => {
         try{
-            const apiResponse = await fetch(`https://snowshelves2.herokuapp.com/equips/${idToUpdate}`, {
+            const apiResponse = await fetch(`https://snowshelves-back.herokuapp.com/equips/${idToUpdate}`, {
                 method: "PUT",
                 body: JSON.stringify(snowsToUpdate),
                 headers: {
